@@ -3,7 +3,7 @@ import "./globals.css";
 import "../styles/cookiebot.css";
 import { Navigation } from "@/components/layout/navigation";
 import { Footer } from "@/components/layout/footer";
-import { SkipLink } from "@/components/layout/skip-link";
+import { ScrollToTop } from "@/components/layout/scroll-to-top";
 import { CookiebotScript } from "@/components/cookiebot/cookiebot-script";
 
 export const metadata: Metadata = {
@@ -33,12 +33,12 @@ export default function RootLayout({
         <CookiebotScript />
       </head>
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
-        <SkipLink />
         <Navigation />
         <main id="main-content" className="pt-20">
           {children}
         </main>
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );
