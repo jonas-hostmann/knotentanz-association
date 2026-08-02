@@ -27,7 +27,7 @@ export function EventList({ events }: { events: Event[] }) {
   const filteredEvents = filter === "all" ? events : events.filter((e) => e.category === filter);
 
   return (
-    <section className="py-24">
+    <section className="py-28">
       <Container>
         <SectionHeader
           eyebrow="Veranstaltungen"
@@ -35,12 +35,12 @@ export function EventList({ events }: { events: Event[] }) {
           description="Entdecken Sie alle bevorstehenden Veranstaltungen der Knotentanz Association."
         />
 
-        <div className="mt-10 flex flex-wrap justify-center gap-3">
+        <div className="mt-14 flex flex-wrap justify-center gap-3">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setFilter(category)}
-              className={`border px-5 py-2 text-xs font-semibold uppercase tracking-widest transition-colors ${
+              className={`border px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] transition-all ${
                 filter === category
                   ? "border-primary bg-primary text-background"
                   : "border-border bg-transparent text-muted-foreground hover:border-primary hover:text-primary"
@@ -52,39 +52,43 @@ export function EventList({ events }: { events: Event[] }) {
           ))}
         </div>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {filteredEvents.map((event) => (
-            <Card key={event.id} className="flex flex-col">
-              <div className="relative aspect-[4/3] overflow-hidden">
+            <Card
+              key={event.id}
+              className="group flex flex-col overflow-hidden border-border bg-card transition-all duration-500 hover:border-primary/50 hover:shadow-gold"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
                   src={event.image}
                   alt={event.title}
                   fill
-                  className="object-cover transition-transform duration-700 hover:scale-105"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                 />
-                <div className="absolute left-4 top-4 bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wider text-background">
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-60" />
+                <div className="absolute left-5 top-5 border border-primary/80 bg-primary/90 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-background">
                   {event.category}
                 </div>
               </div>
               <CardHeader className="flex-1">
-                <CardTitle>{event.title}</CardTitle>
+                <CardTitle className="text-cream">{event.title}</CardTitle>
                 <CardDescription className="line-clamp-3">{event.excerpt}</CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
-                <div className="space-y-2 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-2">
+                <div className="space-y-2.5 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-3">
                     <Calendar className="h-4 w-4 text-primary" />
                     <span>{formatDate(event.date)}</span>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-3">
                     <MapPin className="h-4 w-4 text-primary" />
                     <span>{event.location}</span>
                   </div>
                 </div>
               </CardContent>
               <CardFooter>
-                <Button variant="outline" size="sm" className="w-full" asChild>
+                <Button variant="outline" size="sm" className="w-full border-primary/50 hover:bg-primary/10 hover:text-primary" asChild>
                   <Link href={`/events/${event.slug}`}>
                     Details <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>

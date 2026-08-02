@@ -17,12 +17,24 @@ const navLinks = [
 export function Navigation() {
   const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-background/80 backdrop-blur-md">
+    <header
+      className={cn(
+        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+        scrolled ? "border-b border-border/80 bg-background/95 backdrop-blur-md" : "bg-transparent"
+      )}
+    >
       <Container>
-        <nav aria-label="Hauptnavigation" className="flex h-20 items-center justify-between">
-          <Link href="/" className="font-serif text-2xl font-normal tracking-tight text-foreground">
+        <nav aria-label="Hauptnavigation" className="flex h-24 items-center justify-between">
+          <Link href="/" className="font-serif text-2xl font-normal tracking-tight text-cream">
             Knotentanz
           </Link>
 
@@ -32,12 +44,15 @@ export function Navigation() {
                 <Link
                   href={link.href}
                   className={cn(
-                    "relative text-sm font-medium uppercase tracking-widest transition-colors",
-                    pathname === link.href ? "text-primary" : "text-foreground/80 hover:text-primary"
+                    "relative text-sm font-medium uppercase tracking-[0.2em] transition-colors",
+                    pathname === link.href ? "text-primary" : "text-cream/80 hover:text-primary"
                   )}
                   aria-current={pathname === link.href ? "page" : undefined}
                 >
                   {link.label}
+                  {pathname === link.href && (
+                    <span className="absolute -bottom-1 left-0 h-px w-full bg-primary" />
+                  )}
                 </Link>
               </li>
             ))}
@@ -46,7 +61,7 @@ export function Navigation() {
           <button
             type="button"
             onClick={() => setOpen(!open)}
-            className="inline-flex items-center justify-center p-2 text-foreground md:hidden"
+            className="inline-flex items-center justify-center p-2 text-cream md:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Menü schließen" : "Menü öffnen"}
@@ -57,7 +72,7 @@ export function Navigation() {
       </Container>
 
       {open && (
-        <div id="mobile-menu" className="border-b border-white/10 bg-background md:hidden">
+        <div id="mobile-menu" className="border-b border-border bg-background md:hidden">
           <Container className="py-6">
             <ul className="flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -66,8 +81,8 @@ export function Navigation() {
                     href={link.href}
                     onClick={() => setOpen(false)}
                     className={cn(
-                      "block text-sm font-medium uppercase tracking-widest",
-                      pathname === link.href ? "text-primary" : "text-foreground/80 hover:text-primary"
+                      "block text-sm font-medium uppercase tracking-[0.2em]",
+                      pathname === link.href ? "text-primary" : "text-cream/80 hover:text-primary"
                     )}
                     aria-current={pathname === link.href ? "page" : undefined}
                   >

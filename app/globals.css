@@ -4,8 +4,10 @@
 
 @layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #f8f8f8;
+    --background: #050505;
+    --foreground: #f8f5f0;
+    --primary: #c5a059;
+    --cream: #f4efe6;
   }
 
   html {
@@ -27,11 +29,21 @@
   }
 
   ::selection {
-    @apply bg-primary text-foreground;
+    @apply bg-primary text-background;
   }
 
   :focus-visible {
     @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer components {
+  .text-gold-gradient {
+    @apply bg-gold-gradient bg-clip-text text-transparent;
+  }
+
+  .section-eyebrow {
+    @apply mb-4 inline-block text-xs font-semibold uppercase tracking-[0.3em] text-primary;
   }
 }
 

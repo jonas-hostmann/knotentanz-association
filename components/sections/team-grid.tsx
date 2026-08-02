@@ -8,7 +8,7 @@ export async function TeamGrid() {
   const team = await getTeam();
 
   return (
-    <section className="border-t border-border py-24">
+    <section className="border-t border-border py-28">
       <Container>
         <SectionHeader
           eyebrow="Team"
@@ -16,20 +16,20 @@ export async function TeamGrid() {
           description="Engagierte Persönlichkeiten, die die Knotentanz Association mit Herz und Expertise voranbringen."
         />
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-20 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {team.map((member: TeamMember) => (
-            <Card key={member.id} className="text-center">
-              <div className="relative mx-auto mt-6 aspect-square w-32 overflow-hidden rounded-full border-2 border-primary">
+            <Card key={member.id} className="border-border bg-card text-center">
+              <div className="relative mx-auto mt-8 aspect-square w-36 overflow-hidden rounded-full border-2 border-primary/50">
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
                   className="object-cover"
-                  sizes="128px"
+                  sizes="144px"
                 />
               </div>
               <CardHeader>
-                <CardTitle>{member.name}</CardTitle>
+                <CardTitle className="text-cream">{member.name}</CardTitle>
                 <CardDescription className="text-primary">{member.role}</CardDescription>
               </CardHeader>
               <CardContent>

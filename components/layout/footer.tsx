@@ -6,9 +6,9 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-secondary">
       <Container>
-        <div className="grid gap-12 py-16 md:grid-cols-3">
+        <div className="grid gap-12 py-20 md:grid-cols-3">
           <div>
-            <Link href="/" className="mb-6 inline-block font-serif text-2xl text-foreground">
+            <Link href="/" className="mb-6 inline-block font-serif text-2xl text-cream">
               Knotentanz Association
             </Link>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
@@ -18,7 +18,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-5 font-serif text-lg text-foreground">Navigation</h3>
+            <h3 className="mb-5 font-serif text-lg text-cream">Navigation</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
                 <Link href="/" className="transition-colors hover:text-primary">
@@ -44,7 +44,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-5 font-serif text-lg text-foreground">Rechtliches & Social</h3>
+            <h3 className="mb-5 font-serif text-lg text-cream">Rechtliches & Social</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
                 <Link href="/impressum" className="transition-colors hover:text-primary">

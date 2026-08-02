@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/layout/container";
 import { SectionHeader } from "@/components/ui/section-header";
 import { ContactForm } from "@/components/sections/contact-form";
@@ -11,8 +12,18 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-secondary py-24">
-        <Container>
+      <section className="relative bg-secondary py-28">
+        <div className="absolute inset-0 z-0 opacity-20">
+          <Image
+            src="/assets/opera.jpg"
+            alt="Opernhaus bei Nacht"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/80 via-secondary/95 to-secondary" />
+        <Container className="relative z-10">
           <SectionHeader
             align="center"
             eyebrow="Kontakt"
@@ -22,16 +33,16 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <section className="py-24">
+      <section className="py-28">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-3">
+          <div className="grid gap-16 lg:grid-cols-3">
             <div className="lg:col-span-1">
-              <h2 className="mb-8 font-serif text-3xl text-foreground">Kontaktdaten</h2>
-              <div className="space-y-6">
+              <h2 className="mb-10 font-serif text-3xl text-cream">Kontaktdaten</h2>
+              <div className="space-y-7">
                 <div className="flex items-start gap-4">
                   <MapPin className="mt-1 h-5 w-5 text-primary" />
                   <div>
-                    <p className="font-medium text-foreground">Knotentanz Association</p>
+                    <p className="font-medium text-cream">Knotentanz Association</p>
                     <p className="text-sm text-muted-foreground">Musterstraße 12</p>
                     <p className="text-sm text-muted-foreground">1010 Wien, Österreich</p>
                   </div>
@@ -39,7 +50,7 @@ export default function ContactPage() {
                 <div className="flex items-start gap-4">
                   <Mail className="mt-1 h-5 w-5 text-primary" />
                   <div>
-                    <p className="font-medium text-foreground">E-Mail</p>
+                    <p className="font-medium text-cream">E-Mail</p>
                     <a
                       href="mailto:office@knotentanz-association.org"
                       className="text-sm text-muted-foreground transition-colors hover:text-primary"
@@ -51,7 +62,7 @@ export default function ContactPage() {
                 <div className="flex items-start gap-4">
                   <Phone className="mt-1 h-5 w-5 text-primary" />
                   <div>
-                    <p className="font-medium text-foreground">Telefon</p>
+                    <p className="font-medium text-cream">Telefon</p>
                     <a
                       href="tel:+431234567890"
                       className="text-sm text-muted-foreground transition-colors hover:text-primary"
@@ -63,13 +74,13 @@ export default function ContactPage() {
                 <div className="flex items-start gap-4">
                   <Clock className="mt-1 h-5 w-5 text-primary" />
                   <div>
-                    <p className="font-medium text-foreground">Bürozeiten</p>
+                    <p className="font-medium text-cream">Bürozeiten</p>
                     <p className="text-sm text-muted-foreground">Mo–Fr: 09:00 – 17:00 Uhr</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-10 aspect-video overflow-hidden border border-border">
+              <div className="mt-12 aspect-video overflow-hidden border border-border">
                 <iframe
                   title="Standort Knotentanz Association"
                   src="https://www.openstreetmap.org/export/embed.html?bbox=16.37%2C48.20%2C16.38%2C48.21&layer=mapnik&marker=48.2082%2C16.3738"

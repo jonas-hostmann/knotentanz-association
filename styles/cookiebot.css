@@ -1,31 +1,31 @@
-/* Cookiebot / UserCentrics Dialog - elegantes Override */
+/* Cookiebot / UserCentrics Dialog - elegantes Opernball-Style Override */
 #CookiebotDialog,
 #CybotCookiebotDialog,
 .CookiebotDialog,
 #UserCentricsRoot {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  color: #f8f8f8 !important;
+  color: #f8f5f0 !important;
 }
 
 #CookiebotDialog,
 #CybotCookiebotDialog,
 .CookiebotDialog {
-  background-color: #111111 !important;
-  border: 1px solid #262626 !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+  background-color: #0f0f0f !important;
+  border: 1px solid #2a2520 !important;
+  box-shadow: 0 25px 80px -12px rgba(0, 0, 0, 0.7) !important;
 }
 
 #CookiebotDialog .CookiebotDialogBody,
 #CybotCookiebotDialog .CybotCookiebotDialogBody,
 .CookiebotDialog .CookiebotDialogBody {
-  color: #f8f8f8 !important;
-  background-color: #111111 !important;
+  color: #f8f5f0 !important;
+  background-color: #0f0f0f !important;
 }
 
 #CookiebotDialog .CookiebotDialogHeader,
 #CybotCookiebotDialog .CybotCookiebotDialogHeader,
 .CookiebotDialog .CookiebotDialogHeader {
-  color: #c9a227 !important;
+  color: #c5a059 !important;
   font-family: Georgia, Cambria, "Times New Roman", Times, serif !important;
 }
 
@@ -35,13 +35,13 @@
 #CookiebotDialog button,
 #CybotCookiebotDialog button,
 .CookiebotDialog button {
-  background-color: #c9a227 !important;
-  color: #0a0a0a !important;
+  background-color: #c5a059 !important;
+  color: #050505 !important;
   border: none !important;
   border-radius: 0 !important;
   font-weight: 600 !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
+  letter-spacing: 0.08em !important;
   padding: 0.75rem 1.5rem !important;
   transition: all 0.2s ease !important;
 }
@@ -52,57 +52,57 @@
 #CookiebotDialog button:hover,
 #CybotCookiebotDialog button:hover,
 .CookiebotDialog button:hover {
-  background-color: #ddbe60 !important;
-  color: #0a0a0a !important;
+  background-color: #d1ad6e !important;
+  color: #050505 !important;
 }
 
 #CookiebotDialog .CookiebotDialogButtonSecondary,
 #CybotCookiebotDialog .CybotCookiebotDialogButtonSecondary,
 .CookiebotDialog .CookiebotDialogButtonSecondary {
   background-color: transparent !important;
-  color: #c9a227 !important;
-  border: 1px solid #c9a227 !important;
+  color: #c5a059 !important;
+  border: 1px solid #c5a059 !important;
 }
 
 #CookiebotDialog .CookiebotDialogButtonSecondary:hover,
 #CybotCookiebotDialog .CybotCookiebotDialogButtonSecondary:hover,
 .CookiebotDialog .CookiebotDialogButtonSecondary:hover {
-  background-color: rgba(201, 162, 39, 0.1) !important;
-  color: #ddbe60 !important;
-  border-color: #ddbe60 !important;
+  background-color: rgba(197, 160, 89, 0.1) !important;
+  color: #d1ad6e !important;
+  border-color: #d1ad6e !important;
 }
 
 #CookiebotDialog a,
 #CybotCookiebotDialog a,
 .CookiebotDialog a {
-  color: #c9a227 !important;
+  color: #c5a059 !important;
   text-decoration: underline !important;
 }
 
 #CookiebotDialog a:hover,
 #CybotCookiebotDialog a:hover,
 .CookiebotDialog a:hover {
-  color: #ddbe60 !important;
+  color: #d1ad6e !important;
 }
 
 #CookiebotDialog .CookiebotDialogDetailBody,
 #CybotCookiebotDialog .CybotCookiebotDialogDetailBody,
 .CookiebotDialog .CookiebotDialogDetailBody {
-  background-color: #0a0a0a !important;
-  color: #f8f8f8 !important;
+  background-color: #050505 !important;
+  color: #f8f5f0 !important;
 }
 
 #CookiebotDialog .CookiebotDialogDetailBody .CookiebotDialogDetailBodyContentCookieTabs,
 #CybotCookiebotDialog .CybotCookiebotDialogDetailBody .CybotCookiebotDialogDetailBodyContentCookieTabs,
 .CookiebotDialog .CookiebotDialogDetailBody .CookiebotDialogDetailBodyContentCookieTabs {
-  background-color: #1a1a1a !important;
+  background-color: #14110f !important;
 }
 
 #CookiebotDialog .CookiebotDialogDetailBody .CookiebotDialogDetailBodyContentCookieTypeTable,
 #CybotCookiebotDialog .CybotCookiebotDialogDetailBody .CybotCookiebotDialogDetailBodyContentCookieTypeTable,
 .CookiebotDialog .CookiebotDialogDetailBody .CookiebotDialogDetailBodyContentCookieTypeTable {
-  background-color: #111111 !important;
-  border-color: #262626 !important;
+  background-color: #0f0f0f !important;
+  border-color: #2a2520 !important;
 }
 
 #CookiebotDialog .CookiebotDialogDetailBody .CookiebotDialogDetailBodyContentCookieTypeTable th,
@@ -111,26 +111,26 @@
 #CookiebotDialog .CookiebotDialogDetailBody .CookiebotDialogDetailBodyContentCookieTypeTable td,
 #CybotCookiebotDialog .CybotCookiebotDialogDetailBody .CybotCookiebotDialogDetailBodyContentCookieTypeTable td,
 .CookiebotDialog .CookiebotDialogDetailBody .CookiebotDialogDetailBodyContentCookieTypeTable td {
-  color: #f8f8f8 !important;
-  border-color: #262626 !important;
+  color: #f8f5f0 !important;
+  border-color: #2a2520 !important;
 }
 
 #CookiebotDialog .CookiebotDialogDetailBody .CookiebotDialogDetailBodyContentCookieTypeSwitch,
 #CybotCookiebotDialog .CybotCookiebotDialogDetailBody .CybotCookiebotDialogDetailBodyContentCookieTypeSwitch,
 .CookiebotDialog .CookiebotDialogDetailBody .CookiebotDialogDetailBodyContentCookieTypeSwitch {
-  background-color: #262626 !important;
+  background-color: #2a2520 !important;
 }
 
 #CookiebotDialog .CookiebotDialogDetailBody .CookiebotDialogDetailBodyContentCookieTypeSwitch.CookiebotDialogDetailBodyContentCookieTypeSwitchChecked,
 #CybotCookiebotDialog .CybotCookiebotDialogDetailBody .CybotCookiebotDialogDetailBodyContentCookieTypeSwitch.CybotCookiebotDialogDetailBodyContentCookieTypeSwitchChecked,
 .CookiebotDialog .CookiebotDialogDetailBody .CookiebotDialogDetailBodyContentCookieTypeSwitch.CookiebotDialogDetailBodyContentCookieTypeSwitchChecked {
-  background-color: #c9a227 !important;
+  background-color: #c5a059 !important;
 }
 
 #CookiebotDialog .CookiebotDialogDetailBody .CookiebotDialogDetailBodyContentCookieTypeIntro,
 #CybotCookiebotDialog .CybotCookiebotDialogDetailBody .CybotCookiebotDialogDetailBodyContentCookieTypeIntro,
 .CookiebotDialog .CookiebotDialogDetailBody .CookiebotDialogDetailBodyContentCookieTypeIntro {
-  color: #a3a3a3 !important;
+  color: #a8a19a !important;
 }
 
 @media (max-width: 768px) {

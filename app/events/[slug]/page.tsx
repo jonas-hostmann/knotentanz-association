@@ -41,7 +41,7 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
 
   return (
     <>
-      <section className="relative h-[50vh] min-h-[360px]">
+      <section className="relative h-[55vh] min-h-[420px]">
         <Image
           src={event.image}
           alt={event.title}
@@ -50,20 +50,21 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-        <Container className="relative z-10 flex h-full flex-col justify-end pb-12">
-          <span className="mb-3 inline-block w-fit bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wider text-background">
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/50 via-transparent to-background/50" />
+        <Container className="relative z-10 flex h-full flex-col justify-end pb-14">
+          <span className="mb-4 inline-block w-fit border border-primary/80 bg-primary/90 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-background">
             {event.category}
           </span>
-          <h1 className="max-w-4xl font-serif text-4xl font-normal leading-tight text-foreground md:text-5xl lg:text-6xl">
+          <h1 className="max-w-4xl font-serif text-4xl font-normal leading-tight text-cream md:text-5xl lg:text-6xl">
             {event.title}
           </h1>
         </Container>
       </section>
 
-      <section className="py-16">
+      <section className="py-20">
         <Container>
-          <Button variant="outline" size="sm" asChild className="mb-8">
+          <Button variant="outline" size="sm" className="mb-10 border-primary/50 hover:bg-primary/10 hover:text-primary" asChild>
             <Link href="/events">
               <ArrowLeft className="mr-2 h-4 w-4" /> Zurück zu den Events
             </Link>
@@ -72,37 +73,37 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
           <div className="grid gap-12 lg:grid-cols-3">
             <div className="lg:col-span-2">
               <div
-                className="prose prose-invert max-w-none text-muted-foreground"
+                className="prose prose-invert max-w-none leading-relaxed text-cream/90"
                 dangerouslySetInnerHTML={{ __html: event.content }}
               />
             </div>
 
             <aside className="h-fit border border-border bg-card p-8">
-              <h2 className="mb-6 font-serif text-2xl text-foreground">Veranstaltungsdetails</h2>
-              <div className="space-y-5">
-                <div className="flex items-start gap-3">
+              <h2 className="mb-8 font-serif text-2xl text-cream">Veranstaltungsdetails</h2>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
                   <Calendar className="mt-0.5 h-5 w-5 text-primary" />
                   <div>
-                    <p className="text-sm font-medium text-foreground">Datum</p>
+                    <p className="text-sm font-medium uppercase tracking-wider text-cream">Datum</p>
                     <p className="text-sm text-muted-foreground">{formatDate(event.date)}</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-4">
                   <Clock className="mt-0.5 h-5 w-5 text-primary" />
                   <div>
-                    <p className="text-sm font-medium text-foreground">Uhrzeit</p>
+                    <p className="text-sm font-medium uppercase tracking-wider text-cream">Uhrzeit</p>
                     <p className="text-sm text-muted-foreground">{event.time || "Wird bekannt gegeben"}</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-4">
                   <MapPin className="mt-0.5 h-5 w-5 text-primary" />
                   <div>
-                    <p className="text-sm font-medium text-foreground">Ort</p>
+                    <p className="text-sm font-medium uppercase tracking-wider text-cream">Ort</p>
                     <p className="text-sm text-muted-foreground">{event.location || "Wird bekannt gegeben"}</p>
                   </div>
                 </div>
               </div>
-              <Button className="mt-8 w-full" asChild>
+              <Button className="mt-10 w-full" asChild>
                 <Link href="/kontakt">Anfrage stellen</Link>
               </Button>
             </aside>

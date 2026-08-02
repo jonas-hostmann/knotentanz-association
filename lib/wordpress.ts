@@ -62,7 +62,7 @@ const mockEvents: Event[] = [
     time: "18:00 Uhr",
     location: "Schlosspark Laxenburg",
     category: "Ball",
-    image: "/assets/hero.jpg",
+    image: "/assets/ballroom.jpg",
     featured: true,
   },
   {
@@ -76,7 +76,7 @@ const mockEvents: Event[] = [
     time: "10:00 Uhr",
     location: "Tanzstudio Wien Mitte",
     category: "Workshop",
-    image: "/assets/hero.jpg",
+    image: "/assets/dancers.jpg",
     featured: false,
   },
   {
@@ -90,7 +90,7 @@ const mockEvents: Event[] = [
     time: "20:00 Uhr",
     location: "Kunsthalle Wien",
     category: "Feier",
-    image: "/assets/hero.jpg",
+    image: "/assets/gala.jpg",
     featured: false,
   },
 ];
